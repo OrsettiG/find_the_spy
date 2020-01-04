@@ -1,0 +1,6 @@
+.vscode
+__pycache__
+game.db
+Pipfile
+Pipfile.lock
+.gitignore
