@@ -1,0 +1,123 @@
+body {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.container {
+    grid-column: 2 / span 3;
+    grid-row: 1 / span 5;
+    max-width: 1000px;
+    margin: auto;
+    padding: 15px;
+    background-color: #f1f1f1;
+    
+}
+
+.game-setup {
+    display: flex;
+    justify-content: space-around;
+
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr); */
+}
+
+.game-form {
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    grid-template-rows: repeat(5, 1fr);
+    /* grid-column: 1 / span 3;
+    grid-row: 1 / span 5; */
+}
+
+
+.input-game-name {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.input-player-names {
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.secret-type {
+    grid-column: 1 / 4;
+    grid-row: 3 / 4;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.input {
+    grid-column: 2 / 4;
+}
+
+.start-btn {
+    grid-column: 1 / 2;
+    grid-row: 5 / 6;
+}
+
+.new-round-btn {
+    grid-column: 3 / 4;
+    grid-row: 5 / 6;
+}
+
+
+.add-btn {
+    grid-column: 2 / 3;
+    grid-row: 5 / 6;
+}
+
+.players {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 15px;
+    padding: 15px 15px 100px 15px;
+    background-color: #e3e3e3;
+}
+
+.player {
+    display: grid;
+    grid-template-columns: repeat(3, 75px);
+    grid-template-rows: 100px 30px;
+    margin: 10px;
+    padding: 5px;
+}
+
+.player-name {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    margin: auto;
+    padding: 0px;
+}
+
+.secret {
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+    margin: auto;
+    padding: 0px;
+}
+
+.secret-btn {
+    grid-column: span 3;
+    grid-row: 2 / 3;
+    margin: 2px;
+    padding: auto;
+}
+
+.delete-btn {
+    grid-column: span 3;
+    grid-row: 3 / 3;
+    margin: 2px;
+    padding: auto;
+}

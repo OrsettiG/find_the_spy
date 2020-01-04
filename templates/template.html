@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Spy Game</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Welcome to the Spy Game</h1>
+        <hr>
+
+        {% block body %}  
+        
+        <div class="game-setup">
+            <form class="game-form" action="/" method="POST">
+                <div class="input-game-name">
+                    <label class="label" for="gameName">What would you like to call your game?</label>
+                    <input class="input" id="gameName" name="gameName" type="text">
+                </div>
+                <div class="input-player-names">
+                    <label class="label" for="playerNames">What are the player names?</label>
+                    <input class="input" id="playerNames" name="playerNames" type="text" placeholder="Type player names seperated by a space (no commas)">
+                </div>
+                <div class="secret-type">
+                    <label class="label" for="secretSelect">What type of secret do you want to use?</label>
+                    <select name="secretSelect" id="secretSelect">
+                        <option class="input" value="Places">Places</option>
+                        <option class="input" value="Jobs">Jobs</option>
+                        <option class="input" value="Things">Things</option>
+                        <option class="input" value="Animals">Animals</option>
+                    </select>
+                </div>
+
+                <input class="start-btn" type="submit" name="btn" value="New Game">
+                <input class="new-round-btn" type="submit" name="btn" value="New Round">
+                <input class="add-btn" type="submit" name="btn" value="Add Players">
+            </form>
+        </div>
+    <hr>
+        <div class="players">
+            {% for player in players %}
+
+            <div class="player">
+                <h3 class="player-name">{{player[1]}}:</h3>
+                <button class="secret-btn" onclick="showHide('{{ player[0] }}')">Show Secret</button>
+                <div class="secret" id='{{ player[0] }}' style='display:none;'>
+                    <p>{{ player[2] }}</p>
+                </div>
+            </div>
+
+            
+
+            {% endfor %}
+        </div>
+        
+        
+        {% endblock %}
+
+</div>
+
+</body>
+<script>
+        function showHide(id) {
+            const x = document.getElementById(id);
+            if (x.style.display === "none") {
+              x.style.display = "block";
+            } else {
+              x.style.display = "none";
+            }
+          }
+</script>
+
+</html>
