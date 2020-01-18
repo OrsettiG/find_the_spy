@@ -4,3 +4,5 @@ game.db
 Pipfile
 Pipfile.lock
 .gitignore
+.flaskenv
+game.db

@@ -16,7 +16,6 @@
                 "FLASK_DEBUG": "0"
             },
             "args": [
-                
                 "reset_db"
             ],
             "jinja": true
@@ -34,6 +33,38 @@
             },
             "args": [
                 "test_db"
+            ],
+            "jinja": true
+        },
+        {
+            "name": "Python: Launch Flask App",
+            "type": "python",
+            "request": "launch",
+            "module": "flask",
+            // "console": "internalConsole",
+            "env": {
+                "FLASK_APP": "run.py",
+                "FLASK_ENV": "development",
+                "FLASK_DEBUG": "1"
+            },
+            "args": [
+                "run"
+            ],
+            "jinja": true
+        },
+        {
+            "name": "Python: Reset and Launch",
+            "type": "python",
+            "request": "launch",
+            "module": "flask",
+            "env": {
+                "FLASK_APP": "app.py",
+                "FLASK_ENV": "development",
+                "FLASK_DEBUG": "1"
+            },
+            "args": [
+                "reset_db",
+                "run"
             ],
             "jinja": true
         }
